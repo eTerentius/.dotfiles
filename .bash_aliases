@@ -11,7 +11,10 @@ if type -fP rm &> /dev/null; then
     alias hsh="rm --interactive=never -rv ${PLACES[@]} 2> /dev/null" #: Clear out some junk from the current user's HOME.
 fi
 
-#alias ls="ls --group-directories-first"
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls --group-directories-first -CFa'
 
 # history shredder
 alias shredHistory="echo "" > ~/.bash_history && history -c && exec \$SHELL -l"
