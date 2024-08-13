@@ -3,7 +3,22 @@
 # for examples
 
 # To use tmux by default
-if [ "$TMUX" = "" ]; then tmux new \; set-option destroy-unattached; fi
+#if [ "$TMUX" = "" ]; then tmux new \; set-option destroy-unattached; fi
+
+#if [[ "$TMUX" ]]; then
+#    function lv() {
+#        tmux split-window -h less "$@"
+#    }
+#    function ev() {
+#        tmux split-window -h emacs "$@"
+#    }
+#    function lh() {
+#        tmux split-window -v less "$@"
+#    }
+#    function eh() {
+#        tmux split-window -v emacs "$@"
+#    }
+#fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -91,12 +106,7 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls --group-directories-first -CF'
-#alias lg='ls --group-directories-first'
-#
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -120,3 +130,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+source /etc/bash_completion.d/git-prompt
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\w\[\033[00m\]\[\033[01;34m\] $(__git_ps1 "(%s)")\[\033[00m\]$ '
+#\[\033[01;34m\
+
+
+
+
