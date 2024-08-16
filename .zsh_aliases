@@ -1,24 +1,25 @@
 # Quick alias to clear out some junk from HOME.
-if type -fP rm &> /dev/null; then
-    PLACES=(
-        "$HOME/.cache"
-        "$HOME/.local/share/Trash"
-        "$HOME/.thumbnails"
-        "$HOME/.mozilla/firefox/Crash\\ Reports"
-        "$HOME/.mozilla/firefox/Pending\\ Pings"
-    )
-    alias hsh="rm --interactive=never -rv ${PLACES[@]} 2> /dev/null" #: Clear out some junk from the current user's HOME.
-fi
+#if type -fP rm &> /dev/null; then
+#    PLACES=(
+#        "$HOME/.cache"
+#        "$HOME/.local/share/Trash"
+#        "$HOME/.thumbnails"
+#        "$HOME/.mozilla/firefox/Crash\\ Reports"
+#        "$HOME/.mozilla/firefox/Pending\\ Pings"
+#    )
+#    alias hsh="rm --interactive=never -rv ${PLACES[@]} 2> /dev/null" #: Clear out some junk from the current user's HOME.
+#fi
 
-alias l="ls -aC --group-directories-first"
+
+alias l="ls -aCF --group-directories-first"
 
 # history shredder
 alias shredHistory="echo "" > ~/.bash_history && history -c && exec \$SHELL -l"
 alias shredSyslog='sudo truncate /var/log/syslog --size 0'
 
 # zsh-like autosuggestion
-bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
+#bind 'set show-all-if-ambiguous on'
+#bind 'TAB:menu-complete'
 
 # List services (enabled, static, etc)
 alias listUnitFiles='systemctl list-unit-files --type service'
