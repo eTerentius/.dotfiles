@@ -109,7 +109,7 @@ font:
     #
      Default:
      style: Regular
-     family: Hack Nerd Font Mono
+     family: MesloLGL Nerd Font
     # size: 8.0
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
