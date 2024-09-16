@@ -11,6 +11,7 @@ if type -fP rm &> /dev/null; then
 fi
 
 alias l="ls -aC --group-directories-first"
+#alias fz="fzf --print0 --height 75% --layout reverse --border --bind 'enter:become(vim {})'"
 
 # history shredder
 alias shredHistory="echo "" > ~/.bash_history && history -c && exec \$SHELL -l"
